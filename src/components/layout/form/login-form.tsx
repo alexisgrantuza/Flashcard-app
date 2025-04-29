@@ -9,11 +9,11 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { signIn } from "../../auth";
+import { signIn } from "../../../../auth";
 import { executeAction } from "@/lib/executeAction";
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { auth } from "../../auth";
+import { auth } from "../../../../auth";
 
 export default async function LoginForm({
   className,
@@ -32,9 +32,7 @@ export default async function LoginForm({
       <Card>
         <CardHeader className="text-center">
           <CardTitle className="text-xl">Welcome back</CardTitle>
-          <CardDescription>
-            Login with your Apple or Google account
-          </CardDescription>
+          <CardDescription>Login with your account to continue</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="grid gap-6">
@@ -65,6 +63,7 @@ export default async function LoginForm({
                 "use server";
                 await executeAction({
                   actionFn: async () => {
+                    // Store redirect URL as a query parameter to help detect post-login states
                     await signIn("credentials", formData);
                   },
                 });
@@ -78,6 +77,7 @@ export default async function LoginForm({
                     id="email"
                     type="email"
                     placeholder="m@example.com"
+                    required
                   />
                 </div>
                 <div className="grid gap-2">
@@ -95,6 +95,7 @@ export default async function LoginForm({
                     id="password"
                     type="password"
                     placeholder="********"
+                    required
                   />
                 </div>
                 <Button type="submit" className="w-full">
@@ -114,7 +115,7 @@ export default async function LoginForm({
           </div>
         </CardContent>
       </Card>
-      <div className="text-balance text-center text-xs text-muted-foreground [&_a]:underline [&_a]:underline-offset-4 [&_a]:hover:text-primary  ">
+      <div className="text-balance text-center text-xs text-muted-foreground [&_a]:underline [&_a]:underline-offset-4 [&_a]:hover:text-primary">
         By clicking continue, you agree to our <a href="#">Terms of Service</a>{" "}
         and <a href="#">Privacy Policy</a>.
       </div>

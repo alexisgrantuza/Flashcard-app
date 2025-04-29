@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { auth, signIn } from "../../auth";
+import { auth, signIn } from "../../../../auth";
 import { redirect } from "next/navigation";
 import { signUp } from "@/lib/actions";
 
