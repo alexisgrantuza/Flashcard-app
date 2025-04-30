@@ -87,12 +87,14 @@ export default function AuthSection() {
               alt={session.user.name || ""}
             />
             <AvatarFallback>
+              "
               {session.user.name
                 ? session.user.name
                     .split(" ")
                     .map((n) => n[0])
                     .join("")
                 : session.user.email?.charAt(0).toUpperCase() || "U"}
+              "
             </AvatarFallback>
           </Avatar>
           <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">

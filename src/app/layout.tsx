@@ -29,10 +29,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <AuthProvider>
-          <Navbar />
-          <main className="container mx-auto px-4 py-6 mt-16">{children}</main>
-        </AuthProvider>
+        <main className="overflow-x-hidden">{children}</main>
       </body>
     </html>
   );

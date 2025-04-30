@@ -20,8 +20,8 @@ function Navbar({ className }: { className?: string }) {
         <div className="flex items-center justify-between w-full max-w-7xl mx-auto px-4">
           {/* Brand */}
           <Link href="/" className="flex items-center gap-2">
-            <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600">
-              Smart Flashcards
+            <span className="text-xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600">
+              FLASHI.AI
             </span>
           </Link>
 
@@ -36,7 +36,7 @@ function Navbar({ className }: { className?: string }) {
               </div>
             </MenuItem>
             <MenuItem setActive={setActive} active={active} item="Study">
-              <div className="text-sm grid grid-cols-2 gap-10 p-4 w-[500px]">
+              <div className="text-sm grid grid-cols-2 gap-10 p-4 ">
                 <ProductItem
                   title="Quick Review"
                   href="/review"
@@ -61,14 +61,6 @@ function Navbar({ className }: { className?: string }) {
                   src="https://placehold.co/140x70"
                   description="Organize and manage your flashcards"
                 />
-              </div>
-            </MenuItem>
-            <MenuItem setActive={setActive} active={active} item="Library">
-              <div className="flex flex-col space-y-4 text-sm min-w-[150px]">
-                <HoveredLink href="/my-cards">My Flashcards</HoveredLink>
-                <HoveredLink href="/shared">Shared With Me</HoveredLink>
-                <HoveredLink href="/public">Public Sets</HoveredLink>
-                <HoveredLink href="/favorites">Favorites</HoveredLink>
               </div>
             </MenuItem>
             <MenuItem setActive={setActive} active={active} item="Help">
