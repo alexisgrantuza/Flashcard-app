@@ -24,7 +24,7 @@ export default async function LoginForm({
 
   const handleSignIn = async () => {
     "use server";
-    await signIn("google", { redirectTo: "/" });
+    await signIn("google", { redirectTo: "/flashi" });
   };
 
   return (

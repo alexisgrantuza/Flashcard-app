@@ -56,8 +56,8 @@ const Page = async () => {
 
           <div className="flex flex-col sm:flex-row gap-4">
             <Link href="/create">
-              <Button className="h-12 cursor-pointer px-8 text-sm font-medium bg-slate-900 dark:bg-white hover:bg-slate-800 dark:hover:bg-slate-200 text-white dark:text-slate-900 rounded-md transition-all">
-                Start creating
+              <Button className="h-12 cursor-pointer w-full md:w-auto px-8 text-sm font-medium bg-slate-900 dark:bg-white hover:bg-slate-800 dark:hover:bg-slate-200 text-white dark:text-slate-900 rounded-md transition-all">
+                Get Started
                 <ArrowRight className="h-4 w-4 ml-2" />
               </Button>
             </Link>
@@ -70,7 +70,7 @@ const Page = async () => {
       </section>
 
       {/* Features Section */}
-      <section className="w-full py-20 px-4 bg-screen dark:bg-gray-900">
+      <section className="w-full py-20 px-4 bg-screen dark:bg-gray-900 mt-40 md:mt-0">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-7xl font-extrabold mb-4 text-black">
@@ -87,7 +87,7 @@ const Page = async () => {
       </section>
 
       {/* How It Works - Linear-style process steps */}
-      <section className="py-24 px-4 bg-slate-50 dark:bg-slate-950 h-[70vh] flex items-center justify-center">
+      <section className="py-24 px-4 bg-slate-50 dark:bg-slate-950 h-[70vh] flex items-center justify-center mt-40 md:mt-0">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-7xl font-extrabold mb-4 text-slate-900 dark:text-white">
@@ -145,10 +145,10 @@ const Page = async () => {
       </section>
 
       {/* Technology Stack - Clean cards with subtle hover */}
-      <section className="py-24 px-4 bg-white dark:bg-slate-900">
+      <section className="py-24 px-4 bg-white dark:bg-slate-900 mt-40 md:mt-0 z-30">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4 text-slate-900 dark:text-white">
+            <h2 className="text-4xl font-bold mb-4 text-slate-900 dark:text-white">
               Built with modern technology
             </h2>
             <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
@@ -287,14 +287,14 @@ const Page = async () => {
                 Flashcards to learn more effectively and efficiently.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
                 <Link href="/create">
                   <Button className="h-10 px-6 text-sm font-medium bg-slate-900 dark:bg-white hover:bg-slate-800 dark:hover:bg-slate-200 text-white dark:text-slate-900 rounded-md transition-all">
                     Start for free
                     <ArrowRight className="h-4 w-4 ml-2" />
                   </Button>
                 </Link>
-                <Button className="h-10 px-6 text-sm font-medium bg-transparent hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 rounded-md transition-all">
+                <Button className="h-10 px-6 text-sm w-[140px] md:w-auto font-medium bg-transparent hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 rounded-md transition-all">
                   Learn more
                 </Button>
               </div>

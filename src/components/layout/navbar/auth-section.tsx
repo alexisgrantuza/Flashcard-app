@@ -80,22 +80,13 @@ export default function AuthSection() {
   if (status === "authenticated" && session?.user) {
     return (
       <DropdownMenu>
-        <DropdownMenuTrigger className="flex items-center gap-2 hover:opacity-80">
+        <DropdownMenuTrigger className="flex items-center gap-2 hover:opacity-80 focus-visible:ring-0 focus:outline-none">
           <Avatar>
             <AvatarImage
               src={session.user.image || ""}
               alt={session.user.name || ""}
             />
-            <AvatarFallback>
-              "
-              {session.user.name
-                ? session.user.name
-                    .split(" ")
-                    .map((n) => n[0])
-                    .join("")
-                : session.user.email?.charAt(0).toUpperCase() || "U"}
-              "
-            </AvatarFallback>
+            <AvatarFallback>U</AvatarFallback>
           </Avatar>
           <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
             {session.user.name || session.user.email?.split("@")[0] || "User"}

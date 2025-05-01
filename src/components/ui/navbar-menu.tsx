@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 
 const transition = {
@@ -35,6 +35,7 @@ export const MenuItem = ({
         <motion.div
           initial={{ opacity: 0, scale: 0.85, y: 10 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
+          exit={{ y: -20, opacity: 0 }}
           transition={transition}
         >
           {active === item && (
@@ -78,21 +79,19 @@ export const ProductItem = ({
   description,
   href,
   src,
+  icon,
 }: {
   title: string;
   description: string;
   href: string;
   src: string;
+  icon?: React.ReactNode;
 }) => {
   return (
     <Link href={href} className="flex space-x-2 group">
-      <img
-        src={src}
-        width={140}
-        height={70}
-        alt={title}
-        className="flex-shrink-0 rounded-md shadow-md transition-transform group-hover:scale-105"
-      />
+      <div className="relative flex-shrink-0 w-[140px] h-[70px] rounded-md overflow-hidden shadow-md transition-transform group-hover:scale-105">
+        <img src={src} alt={title} className="object-cover w-full h-full" />
+      </div>
       <div>
         <h4 className="text-sm font-medium mb-1 text-neutral-700 dark:text-neutral-300 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
           {title}
@@ -105,13 +104,14 @@ export const ProductItem = ({
   );
 };
 
-export const HoveredLink = ({ children, ...rest }: any) => {
+export const HoveredLink = ({ children, icon, ...rest }: any) => {
   return (
     <Link
       {...rest}
-      className="text-neutral-500 hover:text-purple-600 dark:text-neutral-400 dark:hover:text-purple-400 transition-colors"
+      className="flex items-start p-3 rounded-lg text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800/50 transition-colors"
     >
-      {children}
+      {icon && <span className="inline-flex">{icon}</span>}
+      <div className="flex flex-col">{children}</div>
     </Link>
   );
 };
